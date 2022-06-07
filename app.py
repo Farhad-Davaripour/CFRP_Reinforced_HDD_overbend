@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import numpy as np
 st.image("https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/NClogo.png?raw=true",width=150)
-st.title("An Application of Machine Learning to Predict the Peak Equivalent Stress Imposed on an CFRP Wrapped HDD Overbend")
+st.subheader("An Application of Machine Learning to Predict the Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend")
 st.write("by [Farhad Davaripour](https://www.linkedin.com/in/farhad-davaripour/)")
 st.markdown("""This study employs machine leaning to predict the peak equivalent stress on an Horizontally directional drilling (HDD) overbend reinforced with Carbon-fiber-reinforced polymers 
 (CFRP) wrap and subjected to combined loading (internal pressure and thermal expansion). The data used in this study is generated from the parametric study conducted via
