@@ -24,7 +24,7 @@ else:
 pressure = slide_bar = st.sidebar.slider('Internal pressure (MPa)', value=6, 
                       min_value=2, max_value=7) 
 # loading the ML model
-local_regression = pickle.load(open(r'C:\Users\farha\WorkDirectory\Postdoc\Deployment\Stremlit\regression.pickle','rb'))
+local_regression = pickle.load(open('regression.pickle','rb'))
 # making the prediction
 pred = local_regression.predict(np.array([[diameter_over_thickness,CFRP_thickness,fibre_orientation,pressure]]))
 # Output
