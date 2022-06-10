@@ -2,6 +2,6 @@ pandas
 numpy
 matplotlib
 seaborn
-sklearn == 1.0
+sklearn
 tqdm
 streamlit
