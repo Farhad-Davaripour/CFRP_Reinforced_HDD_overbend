@@ -1,4 +1,4 @@
-## An Application of Machine Learning to Predict the Peak Equivalent Stress Imposed on an CFRP Wrapped HDD Overbend
+## An Application of Machine Learning to Predict the Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/farhad-davaripour/cfrp_reinforced_hdd_overbend/main/app.py)
 
 This study is the continuation of the research work on the application of CFRP wrap to enhance the mechanical behavior of pipe bends. The initial study was conducted on side bends subjected only to thermal expansion induced loads. The result of this study will be published on the ASCE Journal (Journal of Pipeline Systems - Engineering) and Practice. The paper is already accepted and is in the process of publication with the doi of [10.1061/(ASCE)PS.1949-1204.0000677](10.1061/(ASCE)PS.1949-1204.0000677).     
