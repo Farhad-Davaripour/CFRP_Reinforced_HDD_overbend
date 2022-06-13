@@ -31,7 +31,7 @@ st.sidebar.markdown("""Note: The input variables above could be adjusted by the 
 peak equivalent stress imposed on the HDD overbend (displayed on the main page). According to the results obtained from 
 feature engineering, the CFRP length is not incorporated (as a feature variable) in the ML model.""")
 # loading the ML model
-local_regression = pickle.load(open(r'C:\Users\farha\WorkDirectory\Postdoc\Deployment\Stremlit\regression.pickle','rb'))
+local_regression = pickle.load(open('regression.pickle','rb'))
 # making the prediction
 pred = local_regression.predict(np.array([[diameter_over_thickness,CFRP_thickness,fibre_orientation,pressure]]))
 # Output
