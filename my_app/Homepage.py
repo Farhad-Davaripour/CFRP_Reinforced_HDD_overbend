@@ -9,22 +9,29 @@ st.markdown("""This study employs machine leaning to predict the peak equivalent
  finite element (FE) analyses. The variables investigated in the FE analyses are CFRP thickness, CFRP length, fiber orientation, internal pressure, and pipe wall 
  thickness. """)
 # Inpus on the sidebar
-st.sidebar.title("Inputs")
-diameter_over_thickness = slide_bar = st.sidebar.slider("Pipe's Diameter over wall-thickness", value=40, 
-                      min_value=20, max_value=50)
-CFRP_thickness = slide_bar = st.sidebar.slider('Thickness of the CFRP wrap (mm)', value=2, 
-                      min_value=0, max_value=6)
-FO = slide_bar = st.sidebar.radio("Fibre orientation",('Circumferencial', 'Longitudinal', 'Multi-directional'))
-if FO=='Circumferencial':
-    fibre_orientation=0
-elif FO=='Longitudinal':
-    fibre_orientation=1
-else:
-    fibre_orientation=2  
-pressure = slide_bar = st.sidebar.slider('Internal pressure (MPa)', value=6, 
+st.sidebar.title("Overview")
+#
+with st.sidebar.expander("Pipeline inputs"):
+    diameter_over_thickness = slide_bar = st.slider("Pipe's Diameter over wall-thickness", value=40, 
+                        min_value=20, max_value=50)
+    pressure = slide_bar = st.slider('Internal pressure (MPa)', value=6, 
                       min_value=2, max_value=7) 
+with st.sidebar.expander("CFRP inputs"):
+    CFRP_thickness = slide_bar = st.slider('Thickness of the CFRP wrap (mm)', value=2, 
+                        min_value=0, max_value=6)
+    FO = slide_bar = st.radio("Fibre orientation",('Circumferencial', 'Longitudinal', 'Multi-directional'))
+    if FO=='Circumferencial':
+        fibre_orientation=0
+    elif FO=='Longitudinal':
+        fibre_orientation=1
+    else:
+        fibre_orientation=2  
+# Note
+st.sidebar.markdown("""Note: The input variables above could be adjusted by the user which will automatically update the 
+peak equivalent stress imposed on the HDD overbend (displayed on the main page). According to the results obtained from 
+feature engineering, the CFRP length is not incorporated (as a feature variable) in the ML model.""")
 # loading the ML model
-local_regression = pickle.load(open('regression.pickle','rb'))
+local_regression = pickle.load(open(r'C:\Users\farha\WorkDirectory\Postdoc\Deployment\Stremlit\regression.pickle','rb'))
 # making the prediction
 pred = local_regression.predict(np.array([[diameter_over_thickness,CFRP_thickness,fibre_orientation,pressure]]))
 # Output
