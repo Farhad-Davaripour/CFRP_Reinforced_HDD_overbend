@@ -8,6 +8,11 @@ st.markdown("""This study employs machine leaning to predict the peak equivalent
 (CFRP) wrap and subjected to combined loading (internal pressure and thermal expansion). The data used in this study is generated from the parametric study conducted via
  finite element (FE) analyses. The variables investigated in the FE analyses are CFRP thickness, CFRP length, fiber orientation, internal pressure, and pipe wall 
  thickness. """)
+# Schamtic view of the HDD overbend
+url = "https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/HDD-Schematic.png?raw=true"
+st.markdown("""Below figure demonstrates a schematic view of a pipeline partly constructed using HDD method. 
+The HDD overbend is highlighted in the figure.""")
+st.image(url,width=750)
 # Inpus on the sidebar
 st.sidebar.title("Overview")
 #
