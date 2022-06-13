@@ -5,3 +5,4 @@ seaborn
 sklearn
 tqdm
 streamlit
+streamlit_authenticator
