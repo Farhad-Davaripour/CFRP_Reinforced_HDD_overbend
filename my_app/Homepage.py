@@ -45,10 +45,10 @@ pred_reinforced = local_regression.predict(np.array([[diameter_over_thickness,CF
 pred_unreinforced = local_regression.predict(np.array([[diameter_over_thickness,0.0,fibre_orientation,pressure]]))
 # Output
 st.subheader('Output:')
-st.markdown('The predicted peak equivlent stress imposed on an HDD overbend is presented in the following bar chart: ')
+#st.markdown('The predicted peak equivlent stress imposed on an HDD overbend is presented in the following bar chart: ')
 df = pd.DataFrame({"Unreinforced HDD overbend":[round(pred_unreinforced[0][0],2),0],
                 "Reinforced HDD overbend":[0,round(pred_reinforced[0][0],2)]},index=['Unreinforced','Rreinforced'])
-st.bar_chart(df)
+#st.bar_chart(df)
 unwrapped = round(pred_unreinforced[0][0],2)
 wrapped = round(pred_reinforced[0][0],2)
 st.write(f"""As presented in the above figure, using CFRP reinforcement, the peak equivalent stress on the HDD overbend decreased by
