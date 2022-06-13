@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
+import pandas as pd
 # st.image("https://github.com/Farhad-Davaripour/streamlit-example/blob/master/NClogo.png?raw=true",width=150)
 st.subheader("An Application of Machine Learning to Predict the Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend")
 st.write("by [Farhad Davaripour](https://www.linkedin.com/in/farhad-davaripour/)")
@@ -42,3 +43,5 @@ pred = local_regression.predict(np.array([[diameter_over_thickness,CFRP_thicknes
 # Output
 st.subheader('The predicted equivlent stress imposed on an HDD overbend is equial to: ')
 st.subheader(str(round(pred[0][0],2))+" MPa")
+df = pd.DataFrame({"Peak Equivalent stress":[round(pred[0][0],2)]})
+st.bar_chart(df)
