@@ -2,6 +2,8 @@ import streamlit as st
 import pickle
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import streamlit.components.v1 as components
 # st.image("https://github.com/Farhad-Davaripour/streamlit-example/blob/master/NClogo.png?raw=true",width=150)
 st.subheader("An Application of Machine Learning to Predict the Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend")
 st.write("by [Farhad Davaripour](https://www.linkedin.com/in/farhad-davaripour/)")
@@ -13,17 +15,17 @@ st.markdown("""This study employs machine leaning to predict the peak equivalent
 url = "https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/HDD-Schematic.png?raw=true"
 st.markdown("""Below figure demonstrates a schematic view of a pipeline partly constructed using HDD method. 
 The HDD overbend is highlighted in the figure.""")
-st.image(url,width=750)
+st.image(url,width=700)
 # Inpus on the sidebar
 st.sidebar.title("Overview")
 #
 with st.sidebar.expander("Pipeline inputs"):
     diameter_over_thickness = slide_bar = st.slider("Pipe's Diameter over wall-thickness", value=40, 
                         min_value=20, max_value=50)
-    pressure = slide_bar = st.slider('Internal pressure (MPa)', value=6, 
-                      min_value=2, max_value=7) 
+    pressure = slide_bar = st.slider('Internal pressure (MPa)', value=9, 
+                      min_value=2, max_value=10) 
 with st.sidebar.expander("CFRP inputs"):
-    CFRP_thickness = slide_bar = st.slider('Thickness of the CFRP wrap (mm)', value=2, 
+    CFRP_thickness = slide_bar = st.slider('Thickness of the CFRP wrap (mm)', value=5, 
                         min_value=0, max_value=6)
     FO = slide_bar = st.radio("Fibre orientation",('Circumferencial', 'Longitudinal', 'Multi-directional'))
     if FO=='Circumferencial':
@@ -39,9 +41,16 @@ feature engineering, the CFRP length is not incorporated (as a feature variable)
 # loading the ML model
 local_regression = pickle.load(open('regression.pickle','rb'))
 # making the prediction
-pred = local_regression.predict(np.array([[diameter_over_thickness,CFRP_thickness,fibre_orientation,pressure]]))
+pred_reinforced = local_regression.predict(np.array([[diameter_over_thickness,CFRP_thickness,fibre_orientation,pressure]]))
+pred_unreinforced = local_regression.predict(np.array([[diameter_over_thickness,0.0,fibre_orientation,pressure]]))
 # Output
-st.subheader('The predicted equivlent stress imposed on an HDD overbend is equial to: ')
-st.subheader(str(round(pred[0][0],2))+" MPa")
-df = pd.DataFrame({"Peak Equivalent stress":[round(pred[0][0],2)]})
+st.subheader('Output:')
+st.markdown('The predicted peak equivlent stress imposed on an HDD overbend is presented in the following bar chart: ')
+df = pd.DataFrame({"Unreinforced HDD overbend":[round(pred_unreinforced[0][0],2),0],
+                "Reinforced HDD overbend":[0,round(pred_reinforced[0][0],2)]},index=['Unreinforced','Rreinforced'])
 st.bar_chart(df)
+unwrapped = round(pred_unreinforced[0][0],2)
+wrapped = round(pred_reinforced[0][0],2)
+st.write(f"""As presented in the above figure, using CFRP reinforcement, the peak equivalent stress on the HDD overbend decreased by
+<b style=color:darkgreen;>{round((unwrapped-wrapped)/unwrapped*100,2)}%</b> from <b style=color:darkgreen;>{unwrapped} MPa</b> to 
+            <b style=color:darkgreen;>{wrapped} MPa</b>""" , unsafe_allow_html=True)
