@@ -59,6 +59,7 @@ col1,mid,col2 = st.columns([1,5,1])
 fig, ax = plt.subplots(figsize=(6,4))
 with mid:
     plt.ylabel('Peak equivalent stress (MPa)')
+    plt.ylim((0,400))
     ax.bar(x=df.index,height=df.values[0],color=['darkBlue','darkgreen'])
     st.pyplot(fig)
     st.markdown("<p style='text-align:center;'>Peak equivalent stress imposed on the HDD overbend</p>", unsafe_allow_html=True)
