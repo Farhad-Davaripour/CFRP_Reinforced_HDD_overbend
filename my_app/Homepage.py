@@ -42,7 +42,7 @@ feature engineering, the CFRP length is not incorporated (as a feature variable)
 local_regression = pickle.load(open('regression.pickle','rb'))
 # making the prediction
 pred_reinforced = local_regression.predict(np.array([[diameter_over_thickness,CFRP_thickness,fibre_orientation,pressure]]))
-pred_unreinforced = local_regression.predict(np.array([[diameter_over_thickness,0.0,fibre_orientation,pressure]]))
+pred_unreinforced = local_regression.predict(np.array([[diameter_over_thickness,0.0,0,pressure]]))
 # Output
 st.subheader('Output:')
 st.markdown("""
