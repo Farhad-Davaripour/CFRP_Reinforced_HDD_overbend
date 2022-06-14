@@ -52,9 +52,17 @@ Random forest, and SVM are evaluated to find the model that yields the highest a
 order polynomial model leads to the highest accuracy. The model performance is provided in the Model Performance page. Also, The 
 predicted peak equivlent stress imposed on an HDD overbend is presented in the following bar chart: 
 """)
-df = pd.DataFrame({"Unreinforced HDD overbend":[round(pred_unreinforced[0][0],2),0],
-                "Reinforced HDD overbend":[0,round(pred_reinforced[0][0],2)]},index=['Unreinforced','Rreinforced'])
-st.bar_chart(df)
+df = pd.DataFrame({"Unreinforced HDD overbend":round(pred_unreinforced[0][0],2),
+                "Reinforced HDD overbend":round(pred_reinforced[0][0],2)},index=['Unreinforced','Rreinforced'])
+# plotting the bar chart
+col1,mid,col2 = st.columns([1,5,1])
+fig, ax = plt.subplots(figsize=(6,4))
+with mid:
+    plt.ylabel('Peak equivalent stress (MPa)')
+    ax.bar(x=df.index,height=df.values[0],color=['darkBlue','darkgreen'])
+    st.pyplot(fig)
+    st.markdown("<p style='text-align:center;'>Peak equivalent stress imposed on the HDD overbend</p>", unsafe_allow_html=True)
+# adding discussion after the bar chart
 unwrapped = round(pred_unreinforced[0][0],2)
 wrapped = round(pred_reinforced[0][0],2)
 st.write(f"""As presented in the above figure, using CFRP reinforcement, the peak equivalent stress on the HDD overbend decreased by
