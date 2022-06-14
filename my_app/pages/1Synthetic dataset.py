@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit_authenticator as stauth
 import pandas as pd
 st.markdown("""The synthetic dataset is generated from multiple finite element analyses. Please contact 
-Farhad Davaripour on his [Linked-in profile]("https://www.linkedin.com/in/farhad-davaripour/") if you wish to review the datset.""")
+Farhad Davaripour on his [Linked-in profile]("https://www.linkedin.com/in/farhad-davaripour/") if you wish to review the dataset.""")
 ###
 names = ['Farhad Davaripour']
 usernames = ['fd7385']
