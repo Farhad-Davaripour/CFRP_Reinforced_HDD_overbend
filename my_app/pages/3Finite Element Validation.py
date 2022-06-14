@@ -1,5 +1,5 @@
 import streamlit as st
-st.subheader('Model Performance')
+st.subheader('Finite Element Validation')
 st.markdown(""" In the present study, the numerical investigation is carried out using a shell-beam based finite element (FE) model in Abaqus. The FE model comprises 
 a combination of shell and beam elements where shell elements are employed to model the Horizontal Directional Drilling (HDD) overbend
 and a few meters of its adjacent straight sections and the beam elements are employed to model the pipeline until the virtual anchor 

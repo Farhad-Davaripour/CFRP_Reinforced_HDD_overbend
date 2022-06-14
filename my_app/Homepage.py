@@ -12,9 +12,9 @@ st.markdown("""This study employs machine leaning to predict the peak equivalent
  finite element (FE) analyses. The variables investigated in the FE analyses are CFRP thickness, CFRP length, fiber orientation, internal pressure, and pipe wall 
  thickness. """)
 # Schamtic view of the HDD overbend
-url = "https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/HDD-Schematic.png?raw=true"
 st.markdown("""Below figure demonstrates a schematic view of a pipeline partly constructed using HDD method. 
 The HDD overbend is highlighted in the figure.""")
+url = "https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/HDD-Schematic.png?raw=true"
 st.image(url,width=700)
 # Inpus on the sidebar
 st.sidebar.title("Overview")
@@ -45,7 +45,13 @@ pred_reinforced = local_regression.predict(np.array([[diameter_over_thickness,CF
 pred_unreinforced = local_regression.predict(np.array([[diameter_over_thickness,0.0,fibre_orientation,pressure]]))
 # Output
 st.subheader('Output:')
-st.markdown('The predicted peak equivlent stress imposed on an HDD overbend is presented in the following bar chart: ')
+st.markdown("""
+The present work employs a data driven approach to predict the peak equivalent stress imposed on the HDD overbend under combined loading.
+The data is generated using finite element models and multiple regression models including multi-linear model, second order polynomial model, 
+Random forest, and SVM are evaluated to find the model that yields the highest accuracy. The detailed analyses showed that using the second 
+order polynomial model leads to the highest accuracy. The model performance is provided in the Model Performance page. Also, The 
+predicted peak equivlent stress imposed on an HDD overbend is presented in the following bar chart: 
+""")
 df = pd.DataFrame({"Unreinforced HDD overbend":[round(pred_unreinforced[0][0],2),0],
                 "Reinforced HDD overbend":[0,round(pred_reinforced[0][0],2)]},index=['Unreinforced','Rreinforced'])
 st.bar_chart(df)
