@@ -5,7 +5,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
 # st.image("https://github.com/Farhad-Davaripour/streamlit-example/blob/master/NClogo.png?raw=true",width=150)
-st.subheader("An Application of Machine Learning to Predict the Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend")
+st.markdown("""<b><h4 style='text-align:center;'>An Application of Machine Learning to Predict the 
+            Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend</h4></b>""", unsafe_allow_html=True)
 st.write("by [Farhad Davaripour](https://www.linkedin.com/in/farhad-davaripour/)")
 st.markdown("""This study employs machine leaning to predict the peak equivalent stress on an Horizontally directional drilling (HDD) overbend reinforced with Carbon-fiber-reinforced polymers 
 (CFRP) wrap and subjected to combined loading (internal pressure and thermal expansion). The data used in this study is generated from the parametric study conducted via
@@ -15,7 +16,16 @@ st.markdown("""This study employs machine leaning to predict the peak equivalent
 st.markdown("""Below figure demonstrates a schematic view of a pipeline partly constructed using HDD method. 
 The HDD overbend is highlighted in the figure.""")
 url = "https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/HDD-Schematic.png?raw=true"
-st.image(url,width=600,caption='A schematic view of a pipeline partly constructed using HDD method')
+col1,mid,col2 = st.columns([1,5,1])
+with mid:
+    st.image(url,width=500,caption='A schematic view of a pipeline partly constructed using HDD method')
+with col2:
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.image("https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/scroll%20down%20for%20more.png?raw=true",width=120)
 # Inpus on the sidebar
 st.sidebar.title("Overview")
 #
@@ -44,9 +54,8 @@ local_regression = pickle.load(open('regression.pickle','rb'))
 pred_reinforced = local_regression.predict(np.array([[diameter_over_thickness,CFRP_thickness,fibre_orientation,pressure]]))
 pred_unreinforced = local_regression.predict(np.array([[diameter_over_thickness,0.0,0,pressure]]))
 # Output
-st.subheader('Output:')
-st.markdown("""
-The present work employs a data driven approach to predict the peak equivalent stress imposed on the HDD overbend under combined loading.
+st.markdown("""<b><h4 style='text-align:left;'>Output:</h4></b>""", unsafe_allow_html=True)
+st.markdown("""The present work employs a data driven approach to predict the peak equivalent stress imposed on the HDD overbend under combined loading.
 The data is generated using finite element models and multiple regression models including multi-linear model, second order polynomial model, 
 Random forest, and SVM are evaluated to find the model that yields the highest accuracy. The detailed analyses showed that using the second 
 order polynomial model leads to the highest accuracy. The model performance is provided in the Model Performance page. Also, The 
