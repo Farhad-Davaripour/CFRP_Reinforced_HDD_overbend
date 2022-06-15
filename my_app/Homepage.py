@@ -5,8 +5,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
 # st.image("https://github.com/Farhad-Davaripour/streamlit-example/blob/master/NClogo.png?raw=true",width=150)
-st.markdown("""<b><h4 style='text-align:center;'>An Application of Machine Learning to Predict the 
-            Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend</h4></b>""", unsafe_allow_html=True)
+st.markdown("""<b><h3 style='text-align:center;'>An Application of Machine Learning to Predict the 
+            Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend</h3></b>""", unsafe_allow_html=True)
 st.write("by [Farhad Davaripour](https://www.linkedin.com/in/farhad-davaripour/)")
 st.markdown("""This study employs machine leaning to predict the peak equivalent stress on an Horizontally directional drilling (HDD) overbend reinforced with Carbon-fiber-reinforced polymers 
 (CFRP) wrap and subjected to combined loading (internal pressure and thermal expansion). The data used in this study is generated from the parametric study conducted via
