@@ -16,9 +16,9 @@ st.markdown("""This study employs machine leaning to predict the peak equivalent
 st.markdown("""Below figure demonstrates a schematic view of a pipeline partly constructed using HDD method. 
 The HDD overbend is highlighted in the figure.""")
 url = "https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/HDD-Schematic.png?raw=true"
-col1,mid,col2 = st.columns([1,5,1])
+col1,mid,col2 = st.columns([0.1,5,1])
 with mid:
-    st.image(url,width=500,caption='A schematic view of a pipeline partly constructed using HDD method')
+    st.image(url,width=650,caption='A schematic view of a pipeline partly constructed using HDD method')
 with col2:
     st.write('\n')
     st.write('\n')
