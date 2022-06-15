@@ -15,7 +15,7 @@ st.markdown("""This study employs machine leaning to predict the peak equivalent
 st.markdown("""Below figure demonstrates a schematic view of a pipeline partly constructed using HDD method. 
 The HDD overbend is highlighted in the figure.""")
 url = "https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/HDD-Schematic.png?raw=true"
-st.image(url,width=600)
+st.image(url,width=600,caption='A schematic view of a pipeline partly constructed using HDD method')
 # Inpus on the sidebar
 st.sidebar.title("Overview")
 #
@@ -39,7 +39,7 @@ st.sidebar.markdown("""Note: The input variables above could be adjusted by the 
 peak equivalent stress imposed on the HDD overbend (displayed on the main page). According to the results obtained from 
 feature engineering, the CFRP length is not incorporated (as a feature variable) in the ML model.""")
 # loading the ML model
-local_regression = pickle.load(open('regression.pickle','rb'))
+local_regression = pickle.load(open(r'C:\Users\farha\WorkDirectory\Postdoc\Deployment\Stremlit\regression.pickle','rb'))
 # making the prediction
 pred_reinforced = local_regression.predict(np.array([[diameter_over_thickness,CFRP_thickness,fibre_orientation,pressure]]))
 pred_unreinforced = local_regression.predict(np.array([[diameter_over_thickness,0.0,0,pressure]]))
