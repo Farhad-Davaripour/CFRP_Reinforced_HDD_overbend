@@ -34,7 +34,7 @@ with st.sidebar.expander("Pipeline inputs:"):
                         min_value=20, max_value=50)
     pressure = slide_bar = st.slider('Internal pressure (MPa):', value=9, 
                       min_value=2, max_value=10) 
-with st.sidebar.expander("CFRP inputs"):
+with st.sidebar.expander("CFRP inputs:"):
     CFRP_thickness = slide_bar = st.slider('Thickness of the CFRP wrap (mm):', value=5, 
                         min_value=0, max_value=6)
     FO = slide_bar = st.radio("Fibre orientation",('Circumferencial', 'Longitudinal', 'Multi-directional'))
