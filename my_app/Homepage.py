@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
+st.markdown("""<b><h4 style='text-align:left;'>Quick Introduction on how to use this dashboard:</h4></b>""", unsafe_allow_html=True)
+st.video("Introduction.mp4")
 # st.image("https://github.com/Farhad-Davaripour/streamlit-example/blob/master/NClogo.png?raw=true",width=150)
 st.markdown("""<b><h3 style='text-align:center;'>An Application of Machine Learning to Predict the 
             Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend</h3></b>""", unsafe_allow_html=True)
