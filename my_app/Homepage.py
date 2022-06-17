@@ -5,8 +5,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
 # st.image("https://github.com/Farhad-Davaripour/streamlit-example/blob/master/NClogo.png?raw=true",width=150)
-st.markdown("""<b><h4 style='text-align:center;'>An Application of Machine Learning to Predict the 
-            Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend</h4></b>""", unsafe_allow_html=True)
+st.markdown("""<b><h3 style='text-align:center;'>An Application of Machine Learning to Predict the 
+            Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend</h3></b>""", unsafe_allow_html=True)
 st.write("by [Farhad Davaripour](https://www.linkedin.com/in/farhad-davaripour/)")
 st.markdown("""This study employs machine leaning to predict the peak equivalent stress on an Horizontally directional drilling (HDD) overbend reinforced with Carbon-fiber-reinforced polymers 
 (CFRP) wrap and subjected to combined loading (internal pressure and thermal expansion). The data used in this study is generated from the parametric study conducted via
@@ -27,15 +27,15 @@ with col2:
     st.write('\n')
     st.image("https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/scroll%20down%20for%20more.png?raw=true",width=120)
 # Inpus on the sidebar
-st.sidebar.title("Overview")
+st.sidebar.title("Input parameters:")
 #
-with st.sidebar.expander("Pipeline inputs"):
-    diameter_over_thickness = slide_bar = st.slider("Pipe's Diameter over wall-thickness", value=40, 
+with st.sidebar.expander("Pipeline inputs:"):
+    diameter_over_thickness = slide_bar = st.slider("Pipe's Diameter over wall-thickness:", value=40, 
                         min_value=20, max_value=50)
-    pressure = slide_bar = st.slider('Internal pressure (MPa)', value=9, 
+    pressure = slide_bar = st.slider('Internal pressure (MPa):', value=9, 
                       min_value=2, max_value=10) 
-with st.sidebar.expander("CFRP inputs"):
-    CFRP_thickness = slide_bar = st.slider('Thickness of the CFRP wrap (mm)', value=5, 
+with st.sidebar.expander("CFRP inputs:"):
+    CFRP_thickness = slide_bar = st.slider('Thickness of the CFRP wrap (mm):', value=5, 
                         min_value=0, max_value=6)
     FO = slide_bar = st.radio("Fibre orientation",('Circumferencial', 'Longitudinal', 'Multi-directional'))
     if FO=='Circumferencial':
