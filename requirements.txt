@@ -4,5 +4,5 @@ matplotlib
 seaborn
 sklearn
 tqdm
-streamlit
+streamlit-nightly
 streamlit_authenticator
