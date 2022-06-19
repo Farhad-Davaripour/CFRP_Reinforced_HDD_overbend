@@ -5,7 +5,7 @@ The present study is the continuation of the research work on the application of
 
 The present study examins the the application of CFRP wrap on Horizontal Directional Drilling (HDD) overbends subjected to combined loading (internal pressure and thermal expansion). Below figure demonstrates a schematic view of a pipeline partly constructed using HDD method, with the HDD overbend highlighted in the figure.
 <p align="center">
-<img width="750" src="https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/HDD-Schematic.png?raw=true" alt="HDD overbend">
+<img width="750" src="https://github.com/Farhad-Davaripour/CFRP_Reinforced_HDD_overbend/blob/main/images/HDD-Schematic.png?raw=true" alt="HDD overbend">
 </p>
 <p align="center">A schematic view of a pipeline partly constructed using HDD method</p>
 
