@@ -45,7 +45,7 @@ for seconds in range(200):
         # randomly generated imput variables
         FO = ['Circumferential','Longitudinal','Multi-directional'][fibre_orientation]
         df_input = pd.DataFrame({'Value':[diameter_over_thickness,pressure,CFRP_thickness]},
-        index=['D/t ratio','internal pressure (MPa)','CFRP thickness (mm)'])
+        index=['D/t ratio','Internal pressure (MPa)','CFRP thickness (mm)'])
         df_FO = pd.DataFrame({"Type":['Circumferential','Longitudinal','Multi-directional'][fibre_orientation]},index=['Fibre orientation'])
         col1,mid,col2 = st.columns([1,0.1,2])
         with col1:
