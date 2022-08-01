@@ -7,10 +7,10 @@ Farhad Davaripour on his [Linked-in profile]("https://www.linkedin.com/in/farhad
 # data acquisition
 st.write('The following table lists the analyses conducted using the validated FE model:')
 ##
-# df = pd.read_excel(df = pd.read_excel(Path(Path.cwd()).parents[0]/"data/data.xlsx").set_index('index'))
+#df = pd.read_excel("data/data.xlsx").set_index('index')
 # features_list = ['t_steel', 'D/t', 'L_CFRP', 't_CFRP', 'fibre_orient', 'pressure']
 # target_variable = ['No_CFRP_vm','peak_vm', 'peak_vm_CFRP', 'vm_reduction_perc']
 # df = df.dropna()
 ## displaying the data
 # st.table(df[features_list + target_variable].reset_index())
-st.write(Path.cwd())
+st.write(Path.cwd().parts[-1])
