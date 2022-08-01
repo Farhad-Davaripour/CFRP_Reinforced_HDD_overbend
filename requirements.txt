@@ -6,3 +6,4 @@ sklearn
 tqdm
 streamlit-nightly
 streamlit_authenticator
+openpyxl
