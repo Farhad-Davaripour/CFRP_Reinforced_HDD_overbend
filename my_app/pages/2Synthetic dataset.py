@@ -14,4 +14,4 @@ st.write('The following table lists the analyses conducted using the validated F
 ## displaying the data
 # st.table(df[features_list + target_variable].reset_index())
 path = Path.cwd()
-st.write(list(path.iterdir()))
+st.write(list(path.iterdir())[8])
