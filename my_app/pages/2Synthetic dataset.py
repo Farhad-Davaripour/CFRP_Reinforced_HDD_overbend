@@ -1,6 +1,7 @@
 import streamlit as st
 import streamlit_authenticator as stauth
 import pandas as pd
+from pathlib import Path
 st.markdown("""The synthetic dataset is generated from multiple finite element analyses. Please contact 
 Farhad Davaripour on his [Linked-in profile]("https://www.linkedin.com/in/farhad-davaripour/") for more infor about the dataset.""")
 # data acquisition
