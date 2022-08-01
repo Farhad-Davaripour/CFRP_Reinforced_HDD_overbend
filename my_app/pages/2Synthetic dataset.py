@@ -7,7 +7,7 @@ Farhad Davaripour on his [Linked-in profile]("https://www.linkedin.com/in/farhad
 # data acquisition
 st.write('The following table lists the analyses conducted using the validated FE model:')
 ##
-path = list(Path.cwd().iterdir())[8]
+path = list(Path.cwd().iterdir())[8]/"data.xlsx"
 st.write(path)
 df = pd.read_excel(path)
 features_list = ['t_steel', 'D/t', 'L_CFRP', 't_CFRP', 'fibre_orient', 'pressure']
