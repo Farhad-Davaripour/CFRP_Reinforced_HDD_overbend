@@ -3,6 +3,7 @@ numpy
 matplotlib
 seaborn
 sklearn
+scikit-learn
 tqdm
 streamlit-nightly
 streamlit_authenticator
