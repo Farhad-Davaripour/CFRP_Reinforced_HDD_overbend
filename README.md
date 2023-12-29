@@ -1,7 +1,8 @@
 ## An Application of Machine Learning to Predict the Peak Equivalent Stress Imposed on a CFRP Wrapped HDD Overbend
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://farhad-davaripour-cfrp-reinforced-hdd-ove-my-apphomepage-0l0y9p.streamlit.app)
 
-The present study is the continuation of the research work on the application of Carbon-Fiber-Reinforced Polymers (CFRP) wrap to enhance the mechanical behavior of pipe bends. The initial study was carried out on side bends subjected only to thermal expansion induced loads, which is  being published in the ASCE Journal (Journal of Pipeline Systems - Engineering and Practice). The doi of the paper once published is as follows: [doi: 10.1061/(ASCE)PS.1949-1204.0000677](10.1061/(ASCE)PS.1949-1204.0000677)
+The present study is the continuation of the research work on the application of Carbon-Fiber-Reinforced Polymers (CFRP) wrap to enhance the mechanical behavior of pipe bends. The initial study was carried out on side bends subjected only to thermal expansion induced loads, which is published in the ASCE Journal (Journal of Pipeline Systems - Engineering and Practice):
+[Application of CFRP Wrap for Reinforcing Undamaged Thin-Walled Pipe Bends under Thermal Expansion Loads](https://ascelibrary.org/doi/abs/10.1061/(ASCE)PS.1949-1204.0000677)
 
 The present study examins the the application of CFRP wrap on Horizontal Directional Drilling (HDD) overbends subjected to combined loading (internal pressure and thermal expansion). Below figure demonstrates a schematic view of a pipeline partly constructed using HDD method, with the HDD overbend highlighted in the figure.
 <p align="center">
